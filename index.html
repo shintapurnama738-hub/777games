@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title>777 GAMES — Best Online Slots, Mahjong & Biggest Jackpots</title>
+  <meta name="description" content="Play at 777 GAMES: the ultimate destination for online slots, mahjong, and casino games. Experience premium graphics, massive bonuses, and the biggest progressive jackpots!">
+  <meta name="keywords" content="777 GAMES, online slots, casino games, play 777 games, progressive jackpots, mahjong slots, slot bonuses">
+  <link rel="icon" type="image/webp" href="./images/777 Games.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Orbitron:wght@500;700;900&family=DM+Sans:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --emerald:    #0F5132;
+      --emerald2:   #198754;
+      --gold:       #FFD700;
+      --gold2:      #FFC107;
+      --darkgreen:  #064E3B;
+      --neon:       #22C55E;
+      --glow-green: rgba(34,197,94,0.4);
+      --white:      #E5E7EB;
+      --black:      #111827;
+      --card-bg:    #0a241a;
+      --border-gold: rgba(255,215,0,0.2);
+      --text-light: #f3f4f6;
+      --mint:       #86efac;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; background: linear-gradient(145deg, #043b1f 0%, #021c0e 100%); color: var(--text-light); font-family: 'DM Sans', sans-serif; overflow: hidden; }
+
+    /* slot machine grain */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      background-image: radial-gradient(rgba(34,197,94,0.03) 2px, transparent 2px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    /* APP CONTAINER */
+    .app {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column;
+      height: 100vh; width: 100%;
+      max-width: 390px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-left: 1px solid var(--border-gold);
+      border-right: 1px solid var(--border-gold);
+      background: rgba(6, 78, 59, 0.25);
+      backdrop-filter: blur(2px);
+    }
+
+    /* TOPBAR with brand style */
+    .topbar {
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px;
+      background: linear-gradient(180deg, #022d1a 0%, #043b1f 100%);
+      border-bottom: 2px solid var(--gold);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .topbar-brand {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .topbar-logo-img {
+      height: 44px; width: 44px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 0 12px var(--neon);
+    }
+    .win-text {
+      font-family: 'Anton', 'Bebas Neue', sans-serif;
+      font-size: 34px; font-weight: 400;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #FFD700 10%, #FFC107 70%, #F59E0B);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 3px 3px 0px rgba(0,0,0,0.5), 0 0 12px rgba(255,215,0,0.6);
+      line-height: 1;
+    }
+    .idn-text {
+      font-family: 'Orbitron', 'Rajdhani', monospace;
+      font-size: 20px; font-weight: 800;
+      background: linear-gradient(145deg, #E5E7EB, #9ca3af);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 2px 2px 0 #111827;
+      letter-spacing: 2px;
+      margin-left: 5px;
+    }
+    .apk-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, var(--gold2), #e6a800);
+      color: #0c2b1a;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 800; font-size: 13px;
+      border: none; border-radius: 60px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(255,193,7,0.6);
+      transition: all 0.2s;
+    }
+    .apk-btn:active { transform: scale(0.96); box-shadow: 0 1px 8px var(--gold); }
+
+    /* SCROLL AREA */
+    .scroll-area {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: clip;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 80px;
+    }
+    .scroll-area::-webkit-scrollbar { width: 3px; }
+    .scroll-area::-webkit-scrollbar-track { background: #0b311f; }
+    .scroll-area::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+
+    /* HERO with slot machine vibe */
+    .hero {
+      position: relative;
+      margin: 16px 14px 0;
+      border-radius: 28px;
+      background: radial-gradient(ellipse at 30% 20%, #1a6e42, #043a20);
+      border: 1px solid var(--gold);
+      box-shadow: 0 10px 25px -5px black, inset 0 1px 0 rgba(255,215,0,0.3);
+      padding: 32px 20px 26px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "💰";
+      font-size: 100px;
+      opacity: 0.08;
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      transform: rotate(12deg);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--darkgreen);
+      padding: 5px 16px;
+      border-radius: 40px;
+      border-left: 3px solid var(--gold);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      color: var(--gold);
+    }
+    .hero-title {
+      font-family: 'Anton', 'Bebas Neue', sans-serif;
+      font-size: 38px; font-weight: 400;
+      background: linear-gradient(135deg, #FFFFFF, #FFD700);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      line-height: 1.2;
+      letter-spacing: 2px;
+    }
+    .hero-title span { color: var(--gold2); display: inline-block; text-shadow: 0 0 12px var(--neon); }
+    .hero-sub {
+      font-size: 13px; color: #caf0e6; margin: 12px 0 20px;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: linear-gradient(95deg, #FFD700, #F59E0B);
+      padding: 12px 32px; border-radius: 60px;
+      font-weight: 800; font-size: 14px; color: #0f3b22;
+      text-decoration: none;
+      box-shadow: 0 5px 0 #7a3e0b;
+      transition: transform .1s, box-shadow .1s;
+    }
+    .hero-cta:active { transform: translateY(2px); box-shadow: 0 2px 0 #7a3e0b; }
+
+    /* jackpot bar */
+    .jackpot-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      margin: 12px 14px 0;
+      padding: 12px 20px;
+      background: #022818;
+      border-radius: 80px;
+      border: 1px solid var(--gold);
+      box-shadow: 0 0 8px var(--neon);
+    }
+    .jackpot-label {
+      font-family: 'Orbitron', monospace;
+      font-size: 12px; font-weight: 700; letter-spacing: 1px;
+      background: #FFD70033; padding: 4px 10px; border-radius: 40px;
+    }
+    .jackpot-amt {
+      font-family: 'Orbitron', monospace;
+      font-size: 20px; font-weight: 900;
+      color: var(--gold);
+      text-shadow: 0 0 8px #FFD700;
+    }
+    .jackpot-dot { width: 10px; height: 10px; background: var(--neon); border-radius: 50%; box-shadow: 0 0 8px #22c55e; animation: pulse 1.4s infinite; }
+    @keyframes pulse { 0% { opacity: 0.4; } 100% { opacity: 1; } }
+
+    /* section header */
+    .section-hd {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 14px 10px;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', 'Anton', sans-serif;
+      font-size: 18px; font-weight: 400; letter-spacing: 1.5px;
+      color: var(--gold);
+      border-left: 4px solid var(--gold);
+      padding-left: 12px;
+    }
+
+    /* GAME GRID 3 columns */
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 0 14px;
+    }
+    .gcard {
+      background: #0d3a24;
+      border: 1px solid var(--border-gold);
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .gcard:active { transform: scale(0.97); }
+    .gcard-img {
+      width: 100%; aspect-ratio: 1;
+      background: #052c1b;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .gcard-img img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .gcard-hot {
+      position: absolute; top: 6px; right: 6px;
+      background: linear-gradient(135deg, #F97316, #DC2626);
+      padding: 2px 8px; border-radius: 20px;
+      font-size: 9px; font-weight: 800; color: white;
+      z-index: 2;
+    }
+    .gcard-info { padding: 8px 8px 10px; }
+    .gcard-name { font-size: 12px; font-weight: 700; color: #FFECB3; }
+    .gcard-sub { font-size: 9px; color: #6fbf8c; margin-top: 3px; }
+
+    /* Promo Strip */
+    .promo-strip {
+      display: flex; gap: 12px;
+      padding: 0 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .promo-strip::-webkit-scrollbar { display: none; }
+    .promo-card {
+      flex-shrink: 0;
+      width: 100%;
+      border-radius: 20px;
+      padding: 14px 14px;
+      position: relative;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .promo-card.p1 { background: linear-gradient(135deg, #0d452c, #042212); border-left: 5px solid #FFD700; }
+    .promo-card.p2 { background: linear-gradient(135deg, #203a2b, #052011); border-left: 5px solid #22C55E; }
+    .promo-card.p3 { background: linear-gradient(135deg, #1e3a2f, #072618); border-left: 5px solid #FFC107; }
+    .promo-tag {
+      font-size: 10px; font-weight: 800; letter-spacing: 1px;
+      display: inline-block; background: #00000055; padding: 2px 12px; border-radius: 20px;
+      margin-bottom: 10px; color: var(--gold);
+    }
+    .promo-val {
+      font-family: 'Orbitron', monospace;
+      font-size: 28px; font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .promo-desc { font-size: 11px; margin-top: 6px; color: #e2e8f0; }
+    .promo-ico { position: absolute; bottom: 8px; right: 12px; font-size: 38px; opacity: 0.2; }
+
+    /* winners scroller */
+    .scroll-window {
+      height: 360px; overflow: hidden;
+      margin: 0 14px;
+      border-radius: 24px;
+      background: #08331f;
+      border: 1px solid var(--border-gold);
+    }
+    .scroll-track {
+      display: flex; flex-direction: column;
+      animation: infinite-scroll 42s linear infinite;
+    }
+    .scroll-track:hover { animation-play-state: paused; }
+    @keyframes infinite-scroll {
+      from { transform: translateY(0); }
+      to { transform: translateY(-50%); }
+    }
+    .winner-item {
+      display: grid; grid-template-columns: 48px 1fr 1fr;
+      gap: 8px; padding: 12px 16px;
+      border-bottom: 1px solid rgba(255,215,0,0.1);
+    }
+    .winner-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      border: 1.5px solid var(--gold);
+    }
+    .winner-name { font-weight: 800; color: #FFD966; font-size: 13px; }
+    .winner-game-name { font-size: 10px; color: var(--mint); }
+    .winner-amt { font-weight: 800; color: #FFD700; text-align: right; }
+
+    /* podium */
+    .chart-header {
+      display: flex; align-items: center; gap: 8px;
+      padding: 18px 14px 6px;
+      font-family: 'Orbitron', monospace;
+      color: var(--gold);
+    }
+    .podium-wrap {
+      display: flex; align-items: flex-end; justify-content: center;
+      height: 220px; gap: 8px;
+      padding: 0 14px;
+    }
+    .podium-col { flex: 1; display: flex; flex-direction: column; align-items: center; }
+    .pod-avatar-wrap { position: relative; margin-bottom: -12px; z-index: 2; }
+    .pod-avatar { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--gold); }
+    .pod-avatar.main { width: 68px; height: 68px; border: 3px solid #FFD700; box-shadow: 0 0 15px var(--gold); }
+    .pod-crown { font-size: 20px; position: absolute; top: -24px; left: 50%; transform: translateX(-50%); }
+    .pod-block {
+      width: 100%; border-radius: 16px 16px 0 0;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 16px 4px 10px;
+    }
+    .pod-block.p1 { height: 150px; background: linear-gradient(0deg, #FFC107, #e6a300); }
+    .pod-block.p2 { height: 120px; background: linear-gradient(0deg, #198754, #0F5132); }
+    .pod-block.p3 { height: 96px; background: linear-gradient(0deg, #4b6e3b, #2c5e2d); }
+    .pod-rank { background: #000000aa; padding: 1px 10px; border-radius: 20px; font-size: 9px; margin-bottom: 5px; font-weight: 800; color: gold;}
+    .pod-name { font-weight: 800; font-size: 12px; color: white; text-shadow: 1px 1px 0 black;}
+    .pod-amt { font-size: 10px; font-weight: 800; color: #FFEC9F; margin-top: 2px;}
+
+    /* rank list */
+    .rank-list {
+      display: flex; flex-direction: column; gap: 10px;
+      padding: 0 14px 20px;
+    }
+    .rank-row {
+      background: #0a2f1f; border: 1px solid var(--border-gold);
+      border-radius: 60px;
+      display: flex; align-items: center;
+      padding: 8px 16px; gap: 12px;
+    }
+    .rank-num { font-weight: 800; width: 32px; color: var(--gold); font-size: 18px;}
+    .rank-avatar { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold);}
+    .rank-name { flex:1; font-weight: 700; color: #f0ead6; font-size: 13px;}
+    .rank-pill { background: linear-gradient(135deg, #FFD700, #F59E0B); color: #022010; font-weight: 800; padding: 4px 14px; border-radius: 60px; font-size: 12px; }
+
+    /* stats bar */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 12px; padding: 0 14px;
+    }
+    .stat-card {
+      background: #042a1b; border-radius: 18px; padding: 12px 6px; text-align: center;
+      border: 1px solid rgba(255,215,0,0.3);
+    }
+    .stat-icon { font-size: 24px; margin-bottom: 6px; color: var(--gold); }
+    .stat-val { font-weight: 900; font-size: 18px; color: #FFD966; }
+    .stat-lbl { font-size: 9px; color: #90d5a8; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; padding: 0 14px 20px; }
+    .faq-item { background: #08381f; border-radius: 20px; border: 1px solid var(--border-gold); }
+    .faq-q {
+      width: 100%; display: flex; justify-content: space-between;
+      padding: 16px; background: transparent; border: none;
+      color: #FFECB3; font-weight: 700; font-size: 14px;
+      cursor: pointer;
+    }
+    .faq-icon { color: var(--gold); transition: transform .3s; }
+    .faq-q.open .faq-icon { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .4s ease;
+      font-size: 12px; color: #c0ebcf; padding: 0 16px;
+    }
+    .faq-a.open { max-height: 300px; padding: 0 16px 16px; }
+
+    /* bottom nav */
+    .bottom-nav {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      background: #022116ee;
+      backdrop-filter: blur(12px);
+      border-top: 2px solid var(--gold);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    .nav-item {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 8px 0; gap: 4px;
+      color: #98b19b; font-size: 10px; font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .nav-item i { font-size: 20px; }
+    .nav-item.active { color: var(--gold); text-shadow: 0 0 4px var(--gold); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <!-- TOPBAR with 777 GAMES branding -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <img class="topbar-logo-img" src="/img/777 Game.webp" alt="777 GAMES">
+      <div><span class="win-text">777</span><span class="idn-text">GAMES</span></div>
+    </div>
+    <button class="apk-btn" onclick="window.open('https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6','_blank')">
+      <i class="fa-solid fa-download"></i> DOWNLOAD APK
+    </button>
+  </header>
+
+  <main class="scroll-area">
+    <!-- HERO slot style -->
+    <div class="hero">
+      <div class="hero-badge"><i class="fa-regular fa-gem"></i> PROGRESSIVE JACKPOT</div>
+      <h1 class="hero-title">Achieve Big Wins <br><span>at 777 GAMES</span></h1>
+      <p class="hero-sub">Join now and play top-rated slots, Bonanza, and high RTP games for a chance to win massive jackpots!</p>
+      <a class="hero-cta" href="https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6" target="_blank"><i class="fa-solid fa-slot-machine"></i> SPIN NOW</a>
+    </div>
+
+    <!-- jackpot progress -->
+    <div class="jackpot-bar">
+      <span class="jackpot-label"><i class="fa-regular fa-clock"></i> TODAY'S JACKPOT</span>
+      <div class="jackpot-dot"></div>
+      <span class="jackpot-amt" id="jackpot-counter">₹0</span>
+    </div>
+
+    <!-- stats -->
+    <div class="stats-bar">
+      <div class="stat-card"><div class="stat-icon">🎰</div><span class="stat-val">680+</span><div class="stat-lbl">Slot Games</div></div>
+      <div class="stat-card"><div class="stat-icon">👾</div><span class="stat-val" id="online-count">2.8K</span><div class="stat-lbl">Active Players</div></div>
+      <div class="stat-card"><div class="stat-icon">🏅</div><span class="stat-val">Daily</span><div class="stat-lbl">Jackpot Winners</div></div>
+    </div>
+
+    <!-- featured games -->
+    <div class="section-hd">
+      <div class="section-title">MOST POPULAR GAMES</div>
+      <a class="see-all" href="https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6" target="_blank" style="color:#FFD966;font-size:12px">See all →</a>
+    </div>
+    <div class="game-grid">
+      <div class="gcard" onclick="window.open('https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6','_blank')">
+        <div class="gcard-img"><img src="/img/Dragon Hatch 4.webp" alt="Dragon Hatch 4"><span class="gcard-hot">HOT</span></div>
+        <div class="gcard-info"><p class="gcard-name">Dragon Hatch 4</p><p class="gcard-sub">777 GAMES</p></div>
+      </div>
+      <div class="gcard" onclick="window.open('https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6','_blank')">
+        <div class="gcard-img"><img src="/img/Fortune Gems 500.webp" alt="Fortune Gems 500"></div>
+        <div class="gcard-info"><p class="gcard-name">Fortune Gems 500</p><p class="gcard-sub">777 GAMES</p></div>
+      </div>
+      <div class="gcard" onclick="window.open('https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6','_blank')">
+        <div class="gcard-img"><img src="/img/Gemstones Gold.webp" alt="Gemstones Gold"><span class="gcard-hot">NEW</span></div>
+        <div class="gcard-info"><p class="gcard-name">Gemstones Gold</p><p class="gcard-sub">777 GAMES</p></div>
+      </div>
+      <div class="gcard" onclick="window.open('https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6','_blank')">
+        <div class="gcard-img"><img src="/img/Mahjong Wins 3.webp" alt="Mahjong Wins 3"></div>
+        <div class="gcard-info"><p class="gcard-name">Mahjong Wins 3</p><p class="gcard-sub">777 GAMES</p></div>
+      </div>
+      <div class="gcard" onclick="window.open('https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6','_blank')">
+        <div class="gcard-img"><img src="/img/Storm Born.webp" alt="Storm Born"></div>
+        <div class="gcard-info"><p class="gcard-name">Storm Born</p><p class="gcard-sub">777 GAMES</p></div>
+      </div>
+      <div class="gcard" onclick="window.open('https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6','_blank')">
+        <div class="gcard-img"><img src="/img/Super Ace Deluxe.webp" alt="Super Ace Deluxe"></div>
+        <div class="gcard-info"><p class="gcard-name">Super Ace Deluxe</p><p class="gcard-sub">777 GAMES</p></div>
+      </div>
+    </div>
+
+    <!-- PROMOS -->
+    <div class="section-hd"><div class="section-title">BONUSES & PROMOS</div><a class="see-all" href="https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6" target="_blank" style="color:#FFD966">claim →</a></div>
+    <div class="promo-strip">
+      <div class="promo-card p1" onclick="window.open('https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6','_blank')"><span class="promo-tag">NEW MEMBER</span><div class="promo-val">200%</div><p class="promo-desc">First deposit bonus + free spins</p><span class="promo-ico">🎲</span></div>
+      <div class="promo-card p2" onclick="window.open('https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6','_blank')"><span class="promo-tag">CASHBACK</span><div class="promo-val">0.8%</div><p class="promo-desc">Unconditional weekly cashback</p><span class="promo-ico">💰</span></div>
+      <div class="promo-card p3" onclick="window.open('https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6','_blank')"><span class="promo-tag">REFERRAL</span><div class="promo-val">7%</div><p class="promo-desc">Lifetime commission + referral bonus</p><span class="promo-ico">👥</span></div>
+    </div>
+
+    <!-- WINNERS SCROLLER -->
+    <div class="section-hd"><div class="section-title">TODAY'S WINNERS</div></div>
+    <div class="scroll-window"><div class="scroll-track" id="scroll-track"></div></div>
+
+    <!-- PODIUM top earners -->
+    <div class="chart-header"><i class="fa-solid fa-chart-line"></i> TODAY'S TOP EARNERS</div>
+    <div class="podium-wrap">
+      <div class="podium-col"><div class="pod-avatar-wrap"><span class="pod-crown">🥈</span><img class="pod-avatar" id="pod-avatar-2" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Joko&backgroundColor=0F5132" alt=""></div><div class="pod-block p2"><span class="pod-rank">NO 2</span><div class="pod-name" id="pod-name-2">Joh***do</div><div class="pod-amt" id="pod-amt-2">₹112K</div></div></div>
+      <div class="podium-col"><div class="pod-avatar-wrap"><span class="pod-crown">👑</span><img class="pod-avatar main" id="pod-avatar-1" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sari&backgroundColor=FFD700" alt=""></div><div class="pod-block p1"><span class="pod-rank" style="background:#000000aa;">NO 1</span><div class="pod-name" id="pod-name-1">Sar***ni</div><div class="pod-amt" id="pod-amt-1">₹275K</div></div></div>
+      <div class="podium-col"><div class="pod-avatar-wrap"><span class="pod-crown">🥉</span><img class="pod-avatar" id="pod-avatar-3" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rian&backgroundColor=064E3B" alt=""></div><div class="pod-block p3"><span class="pod-rank">NO 3</span><div class="pod-name" id="pod-name-3">Ric***wan</div><div class="pod-amt" id="pod-amt-3">₹67K</div></div></div>
+    </div>
+
+    <!-- RANK LIST 4-5 -->
+    <div class="rank-list">
+      <div class="rank-row" id="rank-row-4"><span class="rank-num">4</span><img class="rank-avatar" id="rank-img-4" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Winner1" alt=""><span class="rank-name" id="rank-name-4">Aug***tia</span><div class="rank-pill" id="rank-amt-4">₹41K</div></div>
+      <div class="rank-row" id="rank-row-5"><span class="rank-num">5</span><img class="rank-avatar" id="rank-img-5" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Winner2" alt=""><span class="rank-name" id="rank-name-5">Nin***ni</span><div class="rank-pill" id="rank-amt-5">₹18.5K</div></div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section-hd"><div class="section-title">777 GAMES FAQ</div></div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>🎰 How to register at 777 GAMES?</span><i class="fa-solid fa-chevron-down faq-icon"></i></button><div class="faq-a">Click the "SPIN NOW" button, fill out the registration form, and verify your phone number. Your 200% new member bonus will be activated instantly.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>💸 What is the minimum deposit & withdrawal?</span><i class="fa-solid fa-chevron-down faq-icon"></i></button><div class="faq-a">The minimum deposit is ₹100 and withdrawal is ₹500. Fast processing in under 3 minutes.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>🎁 Is there a weekly cashback bonus?</span><i class="fa-solid fa-chevron-down faq-icon"></i></button><div class="faq-a">Every Monday we distribute an unconditional 0.8% weekly cashback with no maximum limit, credited directly to your account.</div></div>
+    </div>
+  </main>
+
+  <nav class="bottom-nav">
+    <a class="nav-item active" href="https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6" target="_blank"><i class="fa-solid fa-trophy"></i><span>Home</span></a>
+    <a class="nav-item" href="https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6" target="_blank"><i class="fa-solid fa-dice-d6"></i><span>Games</span></a>
+    <a class="nav-item" href="https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6" target="_blank"><i class="fa-solid fa-percent"></i><span>Promos</span></a>
+    <a class="nav-item" href="https://yono777agentbengaluru.com/?code=P8WGMB1BEJ6" target="_blank"><i class="fa-solid fa-headset"></i><span>24/7 Support</span></a>
+  </nav>
+</div>
+
+<script>
+  function toggleFaq(btn) {
+    const ans = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+    if (!isOpen) { ans.classList.add('open'); btn.classList.add('open'); }
+  }
+
+  // Jackpot Animation
+  (function() {
+    let val = 1850000 + Math.random() * 720000;
+    const el = document.getElementById('jackpot-counter');
+    function formatCurrency(v) { return '₹' + Math.floor(v).toLocaleString('en-IN'); }
+    el.textContent = formatCurrency(val);
+    setInterval(() => {
+      val += Math.random() * 210 + 42;
+      el.textContent = formatCurrency(val);
+    }, 2100);
+  })();
+
+  // Online count fluctuation
+  (function() {
+    const el = document.getElementById('online-count');
+    let base = 2400 + Math.floor(Math.random() * 800);
+    function formatK(n) { return n >= 1000 ? (n/1000).toFixed(1)+'K' : n; }
+    el.textContent = formatK(base);
+    setInterval(() => {
+      base += Math.floor(Math.random() * 15) - 7;
+      if (base < 1800) base = 1800;
+      el.textContent = formatK(base);
+    }, 4000);
+  })();
+
+  // WINNERS SCROLLER
+  (function() {
+    const names =["Rina***i","Brad***to","Sinta***ri","Alex***an","Rizki***an","Dewi***ta","Ardi***an","Citra***ni","Liam***to","Putri***na","Henry***an","Rani***a"];
+    const games =["Jackpot Hunter","Mahjong Ways 2","Wild West Gold","Gates of Olympus","Sweet Bonanza","Starlight Princess","Aztec Gems"];
+    function randAmount() { return '₹' + Math.floor(Math.random() * 2800 + 150).toLocaleString('en-IN'); }
+    function randSeed() { return Math.random().toString(36).substring(2,8); }
+    function avatarUrl(s) { return `https://api.dicebear.com/7.x/avataaars/svg?seed=${s}&backgroundColor=0F5132,064E3B,198754`; }
+    const track = document.getElementById('scroll-track');
+    let inner = '';
+    for (let i=0;i<24;i++) {
+      let name = names[Math.floor(Math.random()*names.length)];
+      let game = games[Math.floor(Math.random()*games.length)];
+      let amount = randAmount();
+      let seed = randSeed();
+      inner += `<div class="winner-item"><img class="winner-avatar" src="${avatarUrl(seed)}"><div><div class="winner-name">${name}</div><div class="winner-game-name">${game}</div></div><div><div class="winner-amt">${amount}</div><div class="winner-label">Jackpot</div></div></div>`;
+    }
+    track.innerHTML = inner + inner;
+
+    // update rank rows 4 & 5
+    const allNames = names;
+    function refreshRank(rowNum, minK, maxK) {
+      const row = document.getElementById(`rank-row-${rowNum}`);
+      if (!row) return;
+      const nameEl = document.getElementById(`rank-name-${rowNum}`);
+      const amtEl = document.getElementById(`rank-amt-${rowNum}`);
+      const imgEl = document.getElementById(`rank-img-${rowNum}`);
+      row.classList.add('fading');
+      setTimeout(() => {
+        let randVal = Math.floor(Math.random() * (maxK - minK + 1) + minK);
+        nameEl.textContent = allNames[Math.floor(Math.random() * allNames.length)];
+        amtEl.textContent = (randVal >= 1000) ? '₹' + (randVal/1000).toFixed(1) + 'M' : '₹' + randVal + 'K';
+        imgEl.src = avatarUrl(Math.random().toString(36));
+        row.classList.remove('fading');
+      }, 450);
+    }
+    setInterval(() => refreshRank(4, 32, 58), 6200);
+    setInterval(() => refreshRank(5, 11, 28), 8400);
+  })();
+</script>
+</body>
+</html>
